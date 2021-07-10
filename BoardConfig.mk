@@ -46,7 +46,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
-BOARD_MKBOOTIMG_ARGS := --dt $(LOCAL_PATH)/recovery/prebuilt/dt.img
+#BOARD_MKBOOTIMG_ARGS := 
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true

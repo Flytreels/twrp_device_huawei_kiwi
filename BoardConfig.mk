@@ -66,27 +66,25 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # blockdev --getbsz /dev/block/mmcblk0p19
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # SHRP
-SHRP_DEVICE_CODE := kiwi
-SHRP_PATH := device/huawei/kiwi
-SHRP_MAINTAINER := Flytreels
-SHRP_REC_TYPE := SAR
-SHRP_DEVICE_TYPE := A_Only
-SHRP_REC := /dev/block/bootdevice/by-name/recovery
-SHRP_INTERNAL := /sdcard
-SHRP_EXTERNAL := /external_sd
-SHRP_OTG := /otg
+#SHRP_DEVICE_CODE := kiwi
+#SHRP_PATH := device/huawei/kiwi
+#SHRP_MAINTAINER := Flytreels
+#SHRP_REC_TYPE := SAR
+#SHRP_DEVICE_TYPE := A_Only
+#SHRP_REC := /dev/block/bootdevice/by-name/recovery
+#SHRP_INTERNAL := /sdcard
+#SHRP_EXTERNAL := /external_sd
+#SHRP_OTG := /otg
 #SHRP_NOTCH := true
-SHRP_EXPRESS := true
-SHRP_DARK := true
-SHRP_CUSTOM_FLASHLIGHT := true
-SHRP_FONP_1 := /sys/class/leds/torch-light/max_brightness
-SHRP_FONP_2 := /sys/class/leds/torch-light/max_brightness
-SHRP_FONP_3 := /sys/class/leds/torch-light/max_brightness
-SHRP_FLASH_MAX_BRIGHTNESS := 255
-SHRP_NO_SAR_AUTOMOUNT := true
+#SHRP_EXPRESS := true
+#SHRP_DARK := true
+#SHRP_CUSTOM_FLASHLIGHT := true
+#SHRP_FONP_1 := /sys/class/leds/torch-light/max_brightness
+#SHRP_FLASH_MAX_BRIGHTNESS := 255
+#SHRP_NO_SAR_AUTOMOUNT := true
 #SHRP_LITE := true
 
-# Recovery
+# TWRP
 TARGET_RECOVERY_FSTAB := device/huawei/kiwi/recovery/root/etc/twrp.fstab
 RECOVERY_VARIANT := twrp
 TWHAVE_SELINUX := true
@@ -99,8 +97,8 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
-#TW_INPUT_BLACKLIST := "accelerometer"
-#TW_NO_EXFAT_FUSE := true
+TW_INPUT_BLACKLIST := "accelerometer"
+TW_NO_EXFAT_FUSE := true
 #TW_EXCLUDE_SUPERSU := true
 #TWRP_INCLUDE_LOGCAT := true
 #TARGET_USES_LOGD := true

@@ -46,7 +46,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
-#BOARD_MKBOOTIMG_ARGS := 
+BOARD_MKBOOTIMG_ARGS := --dt $(DEVICE_PATH)/recovery/prebuilt/dt.img
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -64,6 +64,15 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # blockdev --getbsz /dev/block/mmcblk0p19
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+
+# OrangeFox Recovery
+OF_FL_PATH1 := /sys/class/leds/torch-light
+FOX_REPLACE_BUSYBOX_PS := 1
+FOX_USE_BASH_SHELL := 1
+FOX_ASH_IS_BASH := 1
+FOX_USE_NANO_EDITOR := 1
+FOX_USE_TAR_BINARY := 1
+OF_MAINTAINER := Flytreels
 
 # SHRP
 #SHRP_DEVICE_CODE := kiwi
@@ -100,5 +109,6 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TW_INPUT_BLACKLIST := "accelerometer"
 TW_NO_EXFAT_FUSE := true
 #TW_EXCLUDE_SUPERSU := true
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
+#TWRP_INCLUDE_LOGCAT := true
+#TARGET_USES_LOGD := true
+

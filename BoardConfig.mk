@@ -47,14 +47,20 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 TARGET_NO_BOOTLOADER := true
 TARGET_OTA_ASSERT_DEVICE := kiwi
 
-# Prebuit Kernel
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/recovery/prebuilt/zImage
+# Kernel
+#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/recovery/prebuilt/zImage
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_SOURCE := kernel/huawei/kiwi
+TARGET_KERNEL_CONFIG := kiwi-64_defconfig
+
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
-BOARD_MKBOOTIMG_ARGS := --dt $(DEVICE_PATH)/recovery/prebuilt/dt.img
+#BOARD_MKBOOTIMG_ARGS := --dt $(DEVICE_PATH)/recovery/prebuilt/dt.img
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true

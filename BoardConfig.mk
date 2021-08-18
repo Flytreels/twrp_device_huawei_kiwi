@@ -80,9 +80,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # blockdev --getbsz /dev/block/mmcblk0p19
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # OrangeFox Recovery
-OF_FL_PATH1 := /sys/class/leds/torch-light
-FOX_USE_TAR_BINARY := 1
-OF_MAINTAINER := Flytreels
+#OF_FL_PATH1 := /sys/class/leds/torch-light
+#FOX_USE_TAR_BINARY := 1
+#OF_MAINTAINER := Flytreels
 
 # TWRP
 RECOVERY_VARIANT := twrp
